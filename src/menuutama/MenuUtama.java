@@ -13,6 +13,7 @@ import koneksi.Koneksi;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
@@ -718,6 +719,8 @@ public class MenuUtama extends javax.swing.JFrame {
     private void laporanHasilSeleksiMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_laporanHasilSeleksiMouseClicked
         // TODO add your handling code here:
         try {
+            JasperCompileManager.compileReportToFile("src/laporan/LaporanHasilSeleksi.jrxml",
+                    "src/laporan/LaporanHasilSeleksi.jasper");
             String namaFile = "src/laporan/LaporanHasilSeleksi.jasper";
             HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("PATH_IMG", "src/image/");
@@ -745,6 +748,10 @@ public class MenuUtama extends javax.swing.JFrame {
     private void laporanPrioritasSubKriteriaMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_laporanPrioritasSubKriteriaMouseClicked
         // TODO add your handling code here:
         try {
+            // Recompile .jrxml to .jasper to apply the latest changes automatically
+            JasperCompileManager.compileReportToFile("src/laporan/LaporanPrioritasSubKriteria.jrxml",
+                    "src/laporan/LaporanPrioritasSubKriteria.jasper");
+
             String namaFile = "src/laporan/LaporanPrioritasSubKriteria.jasper";
             HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("PATH_IMG", "src/image/");
@@ -772,6 +779,8 @@ public class MenuUtama extends javax.swing.JFrame {
     private void laporanPrioritasKriteriaMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_laporanPrioritasKriteriaMouseClicked
         // TODO add your handling code here:
         try {
+            JasperCompileManager.compileReportToFile("src/laporan/LaporanPrioritasKriteria.jrxml",
+                    "src/laporan/LaporanPrioritasKriteria.jasper");
             String namaFile = "src/laporan/LaporanPrioritasKriteria.jasper";
             HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("PATH_IMG", "src/image/");
@@ -799,6 +808,8 @@ public class MenuUtama extends javax.swing.JFrame {
     private void laporanCalonPelamarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_laporanCalonPelamarMouseClicked
         // TODO add your handling code here:
         try {
+            JasperCompileManager.compileReportToFile("src/laporan/LaporanCalonPelamar.jrxml",
+                    "src/laporan/LaporanCalonPelamar.jasper");
             String namaFile = "src/laporan/LaporanCalonPelamar.jasper";
             HashMap<String, Object> parameter = new HashMap<>();
             parameter.put("PATH_IMG", "src/image/");

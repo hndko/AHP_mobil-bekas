@@ -45,32 +45,54 @@ public class MenuUtama extends javax.swing.JFrame {
 
         // Modern styling for menu items
         java.awt.Color menuItemBg = new java.awt.Color(52, 58, 64);
+        java.awt.Color subMenuItemBg = new java.awt.Color(80, 80, 80);
         java.awt.Font menuFont = new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14);
-        javax.swing.JLabel[] items = new javax.swing.JLabel[] { calonPelamar, kriteria, seleksi, laporan,
-                laporanCalonPelamar, laporanPrioritasKriteria, laporanPrioritasSubKriteria, laporanHasilSeleksi,
-                menuPengaturanKriteria, menuPengaturanSubKriteria, logout };
-        for (javax.swing.JLabel lbl : items) {
+
+        javax.swing.JLabel[] mainItems = new javax.swing.JLabel[] { calonPelamar, kriteria, seleksi, laporan, logout };
+        for (javax.swing.JLabel lbl : mainItems) {
             if (lbl != null) {
                 lbl.setFont(menuFont);
                 lbl.setForeground(java.awt.Color.WHITE);
                 lbl.setOpaque(true);
                 lbl.setBackground(menuItemBg);
-                lbl.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 12, 8, 12));
+                lbl.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 12));
                 lbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 lbl.setFocusable(true);
                 lbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                lbl.setText(lbl.getText().trim());
+                lbl.setMaximumSize(new java.awt.Dimension(Integer.MAX_VALUE, 44));
+            }
+        }
+
+        javax.swing.JLabel[] subItems = new javax.swing.JLabel[] { laporanCalonPelamar, laporanPrioritasKriteria,
+                laporanHasilSeleksi, laporanPrioritasSubKriteria, menuPengaturanKriteria, menuPengaturanSubKriteria };
+        for (javax.swing.JLabel lbl : subItems) {
+            if (lbl != null) {
+                lbl.setFont(menuFont);
+                lbl.setForeground(new java.awt.Color(230, 230, 230));
+                lbl.setOpaque(true);
+                lbl.setBackground(subMenuItemBg);
+                lbl.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 35, 8, 12));
+                lbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+                lbl.setFocusable(true);
+                lbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                if (lbl.getText() != null) {
+                    lbl.setText(lbl.getText().trim());
+                }
                 lbl.setMaximumSize(new java.awt.Dimension(Integer.MAX_VALUE, 44));
             }
         }
 
         calonPelamar.setBackground(new java.awt.Color(0, 102, 153));
-        kriteria.setBackground(menuItemBg);
-        seleksi.setBackground(menuItemBg);
-        laporan.setBackground(menuItemBg);
         logout.setBackground(new java.awt.Color(220, 53, 69));
-        laporanPrioritasSubKriteria.setText("    Laporan Prioritas Sub Kriteria");
-        laporanHasilSeleksi.setText("    Laporan Hasil Seleksi");
-        menuPengaturanSubKriteria.setText(" Pengaturan Prioritas Sub Kriteria");
+
+        // Manual override texts to ensure no hidden spaces disrupt alignment
+        laporanCalonPelamar.setText("Laporan Data Mobil");
+        laporanPrioritasKriteria.setText("Laporan Prioritas Kriteria");
+        laporanHasilSeleksi.setText("Laporan Hasil Seleksi");
+        laporanPrioritasSubKriteria.setText("Laporan Prioritas Sub Kriteria");
+        menuPengaturanKriteria.setText("Pengaturan Kriteria");
+        menuPengaturanSubKriteria.setText("Pengaturan Prioritas Sub Kriteria");
 
         // Create a responsive split between menu and main pane
         javax.swing.JSplitPane split = new javax.swing.JSplitPane(javax.swing.JSplitPane.HORIZONTAL_SPLIT, Menu, Pane);

@@ -1,0 +1,29 @@
+# Compiled output
+build/
+dist/
+nbbuild/
+
+# NetBeans private folders
+nbproject/private/
+nbproject/Makefile-*.mk
+nbproject/Package-*.bash
+build.xml~
+
+# Log files
+*.log
+hs_err_pid*
+replay_pid*
+
+# VS Code specific
+.vscode/
+.history/
+
+# Package Files (except lib directory for dependencies)
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Note: We are allowing .jar files because the lib/ folder contains necessary dependencies.
+# We are also allowing the database .sql file as requested.

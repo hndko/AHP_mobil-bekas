@@ -24,6 +24,40 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         open();
+
+        // --- UI Enhancements ---
+        jPanel1.setBackground(new java.awt.Color(52, 58, 64)); // Dark matching MenuUtama
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255)); // White for the login form card
+        jLabel1.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel2.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(50, 50, 50));
+
+        // Buttons
+        bLog.setBackground(new java.awt.Color(0, 123, 255));
+        bLog.setForeground(java.awt.Color.WHITE);
+        bLog.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        bLog.setFocusPainted(false);
+        bLog.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 15, 8, 15));
+
+        bregis.setBackground(new java.awt.Color(40, 167, 69));
+        bregis.setForeground(java.awt.Color.WHITE);
+        bregis.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        bregis.setFocusPainted(false);
+        bregis.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 15, 8, 15));
+
+        // Text fields
+        tUser.setFont(new java.awt.Font("Segoe UI", 0, 14));
+        tUser.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)),
+                javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+
+        tPass.setFont(new java.awt.Font("Segoe UI", 0, 14));
+        tPass.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)),
+                javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+
+        setLocationRelativeTo(null); // Center on screen
     }
 
     public void open() {
@@ -51,7 +85,7 @@ public class Login extends javax.swing.JFrame {
             if (hasil.next()) {
                 if (user.equals(hasil.getString("user")) && pass.equals(hasil.getString("password"))) {
                     JOptionPane.showMessageDialog(null, "Login Berhasil");
-                    new MenuUtama().show();
+                    new MenuUtama().setVisible(true);
                     this.dispose();
                 }
             } else {
@@ -303,7 +337,7 @@ public class Login extends javax.swing.JFrame {
     }// GEN-LAST:event_bLogActionPerformed
 
     private void bregisActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_bregisActionPerformed
-        new Register().show();
+        new Register().setVisible(true);
         this.dispose();
     }// GEN-LAST:event_bregisActionPerformed
 
